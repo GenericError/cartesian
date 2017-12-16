@@ -16,5 +16,10 @@ class TestPointClass(unittest.TestCase):
         self.assertEqual(point.x, 0)
         self.assertEqual(point.y, 0)
 
+    def test_point_repr(self):
+        point = cartesian.Point(-1, 2)
+        self.assertEqual(point.__repr__(), "Point(-1, 2)")
+        self.assertEqual(repr(point), "Point(-1, 2)")
+
 if __name__ == '__main__':
     unittest.main()
