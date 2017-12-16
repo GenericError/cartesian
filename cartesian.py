@@ -8,3 +8,6 @@ class Point(object):
 
     def __repr__(self):
         return "Point(" + str(self.x) + ", " + str(self.y) + ")"
+
+    def __str__(self):
+        return "Point at x=" + str(self.x) + " and y=" + str(self.y)
