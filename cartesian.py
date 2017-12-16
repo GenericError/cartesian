@@ -1,5 +1,7 @@
 """ Cartesian - a simple representation of a cartesian plane """
 
 class Point(object):
-    """ A basic point with x and y coordinates"""
-    pass
+    """ A basic point """
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
