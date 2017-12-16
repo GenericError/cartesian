@@ -65,6 +65,61 @@ class TestPointClass(unittest.TestCase):
         """ Ensures that the fourth quadrant is correctly identified """
         self.assertEqual(cartesian.Point(1, -1).quadrant(), 4)
 
+    def test_point_distance(self):
+        """ Ensures the distance is correctly calculated """
+        self.assertEqual(
+            cartesian.Point(3, 4).distance(cartesian.Point(0, 0)), 5
+        )
+        self.assertEqual(
+            cartesian.Point(1, 2).distance(cartesian.Point(4, 3)), pow(10, 0.5)
+        )
+
+    def test_point_negative(self):
+        """ Ensures the distance is correctly calculated with negatives """
+        self.assertEqual(
+            cartesian.Point(-1, 2).distance(cartesian.Point(4, 3)),
+            pow(26, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(1, -2).distance(cartesian.Point(4, 3)),
+            pow(34, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, -2).distance(cartesian.Point(4, 3)),
+            pow(50, 0.5)
+        )
+
+    def test_point_default(self):
+        """ Ensures the distance is correctly calculated between the origin """
+        # Real distance is 1.41... (the square root of 2)
+        self.assertEqual(
+            cartesian.Point(1, 1).distance(), pow(2, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, 1).distance(), pow(2, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(1, -1).distance(), pow(2, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, -1).distance(), pow(2, 0.5)
+        )
+
+    def test_point_distance_none(self):
+        """ Ensures that a lack of distance returns zero """
+        self.assertEqual(
+            cartesian.Point(1, 1).distance(cartesian.Point(1, 1)), 0
+        )
+        self.assertEqual(
+            cartesian.Point(-1, 1).distance(cartesian.Point(-1, 1)), 0
+        )
+        self.assertEqual(
+            cartesian.Point(1, -1).distance(cartesian.Point(1, -1)), 0
+        )
+        self.assertEqual(
+            cartesian.Point(-1, -1).distance(cartesian.Point(-1, -1)), 0
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

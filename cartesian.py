@@ -1,6 +1,11 @@
 """ Cartesian - a simple representation of a cartesian plane """
 
 
+def sqrt(number):
+    """ Returns the square root of x without using the math module """
+    return pow(number, 0.5)
+
+
 class Point(object):
     """ A basic point """
     def __init__(self, x=0, y=0):
@@ -28,3 +33,17 @@ class Point(object):
             return 4
         else:
             return None
+
+    def distance(self, point=None):
+        """ Determines the distance between this point and another point """
+        if not point:
+            x = sqrt(pow((0 - self.x), 2) + pow((0 - self.y), 2))
+        else:
+            x = sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+
+        if x is None:
+            return 0
+        elif x < 0:
+            return x * -1
+        else:
+            return x
