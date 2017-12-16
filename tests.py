@@ -51,19 +51,19 @@ class TestPointClass(unittest.TestCase):
 
     def test_point_quadrant_first(self):
         """ Ensures that the first quadrant is correctly identified """
-        self.assertEqual(cartesian.Point(1,1).quadrant(), 1)
+        self.assertEqual(cartesian.Point(1, 1).quadrant(), 1)
 
     def test_point_quadrant_second(self):
         """ Ensures that the second quadrant is correctly identified """
-        self.assertEqual(cartesian.Point(-1,1).quadrant(), 2)
+        self.assertEqual(cartesian.Point(-1, 1).quadrant(), 2)
 
     def test_point_quadrant_third(self):
         """ Ensures that the third quadrant is correctly identified """
-        self.assertEqual(cartesian.Point(-1,-1).quadrant(), 3)
+        self.assertEqual(cartesian.Point(-1, -1).quadrant(), 3)
 
     def test_point_quadrant_fourth(self):
         """ Ensures that the fourth quadrant is correctly identified """
-        self.assertEqual(cartesian.Point(1,-1).quadrant(), 4)
+        self.assertEqual(cartesian.Point(1, -1).quadrant(), 4)
 
 
 if __name__ == '__main__':
