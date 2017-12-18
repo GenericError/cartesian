@@ -134,6 +134,18 @@ class TestPointClass(unittest.TestCase):
         self.assertEqual(
             cartesian.Point(-1, -1), cartesian.Point(-1, -1)
         )
+        self.assertNotEqual(
+            cartesian.Point(1, 1), cartesian.Point(-1, -1)
+        )
+        self.assertNotEqual(
+            cartesian.Point(-1, 1), cartesian.Point(1, -1)
+        )
+        self.assertNotEqual(
+            cartesian.Point(1, -1), cartesian.Point(-1, 1)
+        )
+        self.assertNotEqual(
+            cartesian.Point(-1, -1), cartesian.Point(1, 1)
+        )
 
 
 if __name__ == '__main__':
