@@ -1,5 +1,10 @@
 """ Cartesian - a simple representation of a cartesian plane """
 
+from collections import namedtuple
+
+point_tuple = namedtuple("origin", ['x', 'y'])
+origin = point_tuple(0, 0)
+
 
 def sqrt(number):
     """ Returns the square root of x without using the math module """
@@ -32,10 +37,6 @@ class Point(object):
             elif self.y < 0:
                 return 3
 
-    def distance(self, point=None):
+    def distance(self, point=origin):
         """ Determines the distance between this point and another point """
-        if not point:
-            x = sqrt(pow((0 - self.x), 2) + pow((0 - self.y), 2))
-        else:
-            x = sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
-        return x
+        return sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))

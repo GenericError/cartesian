@@ -89,7 +89,7 @@ class TestPointClass(unittest.TestCase):
             pow(50, 0.5)
         )
 
-    def test_point_default(self):
+    def test_point_distance_default(self):
         """ Ensures the distance is correctly calculated between the origin """
         # Real distance is 1.41... (the square root of 2)
         self.assertEqual(
