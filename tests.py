@@ -120,6 +120,21 @@ class TestPointClass(unittest.TestCase):
             cartesian.Point(-1, -1).distance(cartesian.Point(-1, -1)), 0
         )
 
+    def test_point_midpoint_default(self):
+        """ Ensures the midpoint is correctly calculated between the origin """
+        self.assertEqual(
+            cartesian.Point(1, 1).midpoint(), cartesian.Point(0.5, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, 1).midpoint(), cartesian.Point(-0.5, 0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(1, -1).midpoint(), cartesian.Point(0.5, -0.5)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, -1).midpoint(), cartesian.Point(-0.5, -0.5)
+        )
+
     def test_point_eq(self):
         """ Ensures the __eq__ dunder method works correctly """
         self.assertEqual(

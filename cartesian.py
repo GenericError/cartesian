@@ -46,3 +46,7 @@ class Point(object):
     def distance(self, point=origin):
         """ Determines the distance between this point and another point """
         return sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+
+    def midpoint(self, point=origin):
+        """ Determines the midpoint between this point and another point """
+        return Point(((point.x+self.x)/2), ((point.y+self.y)/2))
