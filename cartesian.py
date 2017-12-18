@@ -24,6 +24,12 @@ class Point(object):
     def __str__(self):
         return "Point at x=" + str(self.x) + " and y=" + str(self.y)
 
+    def __eq__(self, other):
+        if self.x == other.x:
+            if self.y == other.y:
+                return True
+        return False
+
     def quadrant(self):
         """ Determines the quadrant that the point is located in """
         if self.x > 0:

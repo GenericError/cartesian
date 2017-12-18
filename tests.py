@@ -10,7 +10,7 @@ class TestPointClass(unittest.TestCase):
     def test_create_point(self):
         """ Ensures that a point can be created """
         point = cartesian.Point()
-        self.assertNotEqual(point, False)
+        self.assertIsNotNone(point)
 
     def test_create_point_with_coords(self):
         """ Ensures providied coordinates are correctly assigned """
@@ -118,6 +118,21 @@ class TestPointClass(unittest.TestCase):
         )
         self.assertEqual(
             cartesian.Point(-1, -1).distance(cartesian.Point(-1, -1)), 0
+        )
+
+    def test_point_eq(self):
+        """ Ensures the __eq__ dunder method works correctly """
+        self.assertEqual(
+            cartesian.Point(1, 1), cartesian.Point(1, 1)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, 1), cartesian.Point(-1, 1)
+        )
+        self.assertEqual(
+            cartesian.Point(1, -1), cartesian.Point(1, -1)
+        )
+        self.assertEqual(
+            cartesian.Point(-1, -1), cartesian.Point(-1, -1)
         )
 
 
