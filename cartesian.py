@@ -38,10 +38,4 @@ class Point(object):
             x = sqrt(pow((0 - self.x), 2) + pow((0 - self.y), 2))
         else:
             x = sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
-
-        if x is None:
-            return 0
-        elif x < 0:
-            return x * -1
-        else:
-            return x
+        return x
