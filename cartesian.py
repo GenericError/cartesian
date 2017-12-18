@@ -21,18 +21,16 @@ class Point(object):
 
     def quadrant(self):
         """ Determines the quadrant that the point is located in """
-        if self.x == 0 or self.y == 0:
-            return None
-        elif self.x > 0 and self.y > 0:
-            return 1
-        elif self.x < 0 and self.y > 0:
-            return 2
-        elif self.x < 0 and self.y < 0:
-            return 3
-        elif self.x > 0 and self.y < 0:
-            return 4
-        else:
-            return None
+        if self.x > 0:
+            if self.y > 0:
+                return 1
+            elif self.y < 0:
+                return 4
+        elif self.x < 0:
+            if self.y > 0:
+                return 2
+            elif self.y < 0:
+                return 3
 
     def distance(self, point=None):
         """ Determines the distance between this point and another point """
